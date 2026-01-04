@@ -4,7 +4,7 @@ An enterprise-grade Agentic AI system that combines Retrieval-Augmented Generati
 
 This project was developed as part of an NLP Challenge, focusing on low hallucination, high accuracy, auditability, and real-world enterprise applicability.
 
-Key Highlights:
+## Key Highlights:
 
 ✅ Answers questions strictly grounded in the HCLTech Annual Report
 
@@ -20,7 +20,7 @@ Key Highlights:
 
 ✅ Designed with production-grade architecture principles
 
-System Architecture Overview:
+## System Architecture Overview:
 
 The system follows a clear separation of concerns, inspired by real enterprise AI copilots.
 
@@ -33,7 +33,7 @@ Streamlit UI (Employee Dashboard)
  │
  └── Action Intent ───▶ Agent Layer ───▶ Confirmation ───▶ Enterprise System
 
-Architecture Layers:
+# Architecture Layers:
 
 Ingestion Layer – PDF → Chunks → Embeddings → Vector DB
 
@@ -43,7 +43,7 @@ Agentic Orchestration Layer – Intent detection & task proposals
 
 UI & Audit Layer – Confirmation, execution status, logging
 
-Project Structure
+## Project Structure
 agentic-enterprise-assistant/
 │
 ├── data/
@@ -72,8 +72,8 @@ agentic-enterprise-assistant/
 ├── requirements.txt
 └── README.md
 
-Core Components Explained
-1️⃣ Ingestion Layer (ingest/)
+## Core Components Explained
+# 1️⃣ Ingestion Layer (ingest/)
 
 Purpose: Convert the Annual Report PDF into a searchable knowledge base.
 
@@ -95,7 +95,7 @@ Stores vectors in FAISS
 
 python ingest/build_vector_db.py
 
-2️⃣ Document Intelligence (RAG)
+# 2️⃣ Document Intelligence (RAG)
 
 Purpose: Answer queries strictly based on the Annual Report.
 
@@ -111,7 +111,7 @@ Example Query:
 
 What was the revenue growth in FY25?
 
-3️⃣ Agentic Orchestration Layer
+# 3️⃣ Agentic Orchestration Layer
 
 Purpose: Detect and manage enterprise actions safely.
 
@@ -141,7 +141,7 @@ Example Action Proposal:
   "time": "11am"
 }
 
-4️⃣ MCP Integration (mcp/)
+# 4️⃣ MCP Integration (mcp/)
 
 What is MCP?
 Model Context Protocol (MCP) provides a standardized way to expose enterprise context, policies, and capabilities to AI systems.
@@ -160,7 +160,7 @@ Run MCP server:
 
 python mcp/server.py
 
-5️⃣ User Interface (ui/app.py)
+# 5️⃣ User Interface (ui/app.py)
 
 Built with Streamlit
 
@@ -203,7 +203,7 @@ All interactions are logged in:
 logs/interactions.json
 
 
-Each log entry contains:
+# Each log entry contains:
 
 Timestamp
 
@@ -215,7 +215,7 @@ Action intent (if any)
 
 Execution status
 
-This supports:
+# This supports:
 
 Traceability
 
@@ -223,20 +223,20 @@ Compliance review
 
 Debugging
 
-Environment Setup
-1️⃣ Create .env file
+## Environment Setup
+# 1️⃣ Create .env file
 GOOGLE_API_KEY=your_gemini_api_key_here
 
 
 ⚠️ Do not commit .env to version control.
 
-2️⃣ Install Dependencies
+# 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
 
 Recommended: use a virtual environment or conda environment.
 
-🚀 How to Run (Step-by-Step)
+# How to Run (Step-by-Step)
 # Step 1: Build vector database
 python ingest/build_vector_db.py
 
@@ -246,15 +246,15 @@ python mcp/server.py
 # Step 3: Launch UI
 streamlit run ui/app.py
 
-Example Queries for Demo
+## Example Queries for Demo
 
-Document Queries
+# Document Queries
 
 What was the revenue growth in FY25?
 
 What are the key risk factors mentioned in the Annual Report?
 
-Enterprise Actions
+# Enterprise Actions
 
 Schedule a meeting with HR
 
@@ -262,6 +262,6 @@ Cancel the HR meeting at 11am
 
 Raise an IT ticket for VPN access
 
-Dual-Intent Query
+# Dual-Intent Query
 
 What was the revenue growth in FY25? Schedule a meeting with HR.
