@@ -37,36 +37,6 @@ Agentic Orchestration Layer – Intent detection & task proposals
 
 UI & Audit Layer – Confirmation, execution status, logging
 
-# Project Structure
-agentic-enterprise-assistant/
-│
-├── data/
-│   ├── hcltech_annual_report.pdf      # Source Annual Report (input document)
-│   └── faiss_index/                   # FAISS vector database (generated)
-│
-├── ingest/
-│   ├── load_pdf.py                    # PDF loading and page-wise text extraction
-│   └── build_vector_db.py             # Chunking, embedding, and vector DB creation
-│
-├── agent/
-│   ├── agent.py                       # Core agent logic (RAG + action orchestration)
-│   ├── retriever.py                   # Vector retrieval logic for document grounding
-│   └── tools.py                       # Enterprise action definitions (HR, IT, etc.)
-│
-├── mcp/
-│   └── server.py                      # Model Context Protocol (MCP) server
-│
-├── ui/
-│   └── app.py                         # Streamlit-based employee dashboard
-│
-├── logs/
-│   └── interactions.json              # Audit logs of queries and actions
-│
-├── .env                               # Environment variables (API keys)
-├── requirements.txt                   # Python dependencies
-└── README.md                          # Project documentation
-
-
 # Core Components Explained
 ## 1️⃣ Ingestion Layer (ingest/)
 
