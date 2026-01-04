@@ -24,14 +24,8 @@ This project was developed as part of an NLP Challenge, focusing on low hallucin
 
 The system follows a clear separation of concerns, inspired by real enterprise AI copilots.
 
-User
- │
- ▼
-Streamlit UI (Employee Dashboard)
- │
- ├── Document Query ──▶ RAG Pipeline ──▶ Grounded Answer
- │
- └── Action Intent ───▶ Agent Layer ───▶ Confirmation ───▶ Enterprise System
+<img width="960" height="1088" alt="Gemini_Generated_Image_b13dofb13dofb13d" src="https://github.com/user-attachments/assets/ccdd19fd-614a-4419-9e4f-9aeb6c02451c" />
+
 
 ## Architecture Layers:
 
@@ -47,30 +41,31 @@ UI & Audit Layer – Confirmation, execution status, logging
 agentic-enterprise-assistant/
 │
 ├── data/
-│   ├── hcltech_annual_report.pdf
-│   └── faiss_index/
+│   ├── hcltech_annual_report.pdf      # Source Annual Report (input document)
+│   └── faiss_index/                   # FAISS vector database (generated)
 │
 ├── ingest/
-│   ├── load_pdf.py
-│   └── build_vector_db.py
+│   ├── load_pdf.py                    # PDF loading and page-wise text extraction
+│   └── build_vector_db.py             # Chunking, embedding, and vector DB creation
 │
 ├── agent/
-│   ├── agent.py
-│   ├── retriever.py
-│   └── tools.py
+│   ├── agent.py                       # Core agent logic (RAG + action orchestration)
+│   ├── retriever.py                   # Vector retrieval logic for document grounding
+│   └── tools.py                       # Enterprise action definitions (HR, IT, etc.)
 │
 ├── mcp/
-│   └── server.py
+│   └── server.py                      # Model Context Protocol (MCP) server
 │
 ├── ui/
-│   └── app.py
+│   └── app.py                         # Streamlit-based employee dashboard
 │
 ├── logs/
-│   └── interactions.json
+│   └── interactions.json              # Audit logs of queries and actions
 │
-├── .env
-├── requirements.txt
-└── README.md
+├── .env                               # Environment variables (API keys)
+├── requirements.txt                   # Python dependencies
+└── README.md                          # Project documentation
+
 
 # Core Components Explained
 ## 1️⃣ Ingestion Layer (ingest/)
