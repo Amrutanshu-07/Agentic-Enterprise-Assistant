@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+
+# Logs (optional: keep if judges want)
+# logs/
+
+# FAISS index (optional – comment out if you want to upload it)
+# data/faiss_index/
+
